@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { Heart } from "lucide-react";
 
 export function Footer() {
   return (

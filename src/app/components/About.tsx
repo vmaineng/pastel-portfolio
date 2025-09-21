@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Code, Coffee, Zap } from "lucide-react";
+import Image from "next/image";
 
 export function About() {
   const features = [
@@ -60,8 +61,14 @@ export function About() {
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="absolute inset-4 bg-white rounded-3xl flex items-center justify-center">
-                  <div className="text-6xl">👋</div>
+                <div className="absolute inset-4 bg-white rounded-3xl flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/profile.png"
+                    width={400}
+                    height={400}
+                    className="object-cover"
+                    alt="Profile Picture"
+                  />
                 </div>
               </motion.div>
               <motion.div
@@ -80,13 +87,11 @@ export function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl mb-6 text-gray-800">
-              Hi, I&aposj;m Mai! :)
-            </h3>
+            <h3 className="text-3xl mb-6 text-gray-800">Hi, I&apos;m Mai :)</h3>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              I'm a frontend engineer who loves turning ideas into beautiful,
-              functional web applications. When I&aposj;m not coding,
-              you&aposj;ll find me exploring new technologies, contributing to
+              I&apos;m a frontend engineer who loves turning ideas into
+              beautiful, functional web applications. When I&apos;m not coding,
+              you&apos;ll find me exploring new technologies, contributing to
               open source, or enjoying a good cup of coffee while planning my
               next project.
             </p>

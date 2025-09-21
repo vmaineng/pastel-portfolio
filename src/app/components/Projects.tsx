@@ -6,20 +6,18 @@ import Image from "next/image";
 export function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "JD-AI",
       description:
-        "A modern e-commerce platform built with React, TypeScript, and Stripe integration. Features include product filtering, shopping cart, and secure checkout.",
-      image:
-        "https://images.unsplash.com/photo-1694599048261-a1de00f0117e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc1ODQ2OTIyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Stripe"],
+        "AI-powered mock behavorial platform built with React, TypeScript, and OpenAI. Features include writing and speaking behavorial answers and receiving critiques to become better.",
+      image: "/jd.png",
+      tech: ["React", "TypeScript", "Tailwind CSS", "OpenAI API"],
       color: "from-pink-400 to-rose-400",
     },
     {
       title: "Data Dashboard",
       description:
         "Interactive data visualization dashboard with real-time updates, charts, and analytics. Built for tracking key business metrics.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTg0MjI0NTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/jd.png",
       tech: ["React", "D3.js", "Node.js", "MongoDB"],
       color: "from-blue-400 to-indigo-400",
     },
@@ -27,19 +25,9 @@ export function Projects() {
       title: "Mobile Banking App",
       description:
         "Cross-platform mobile banking application with biometric authentication, transaction history, and budget tracking features.",
-      image:
-        "https://images.unsplash.com/photo-1658953229625-aad99d7603b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzU4NDQ2MTg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/jd.png",
       tech: ["React Native", "Firebase", "Redux", "Expo"],
       color: "from-green-400 to-emerald-400",
-    },
-    {
-      title: "Project Management Tool",
-      description:
-        "Collaborative project management application with task tracking, team communication, and deadline management features.",
-      image:
-        "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3R8ZW58MXx8fHwxNzU4NDI2NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      tech: ["Vue.js", "Express.js", "PostgreSQL", "Socket.io"],
-      color: "from-purple-400 to-violet-400",
     },
   ];
 
@@ -77,13 +65,13 @@ export function Projects() {
               whileHover={{ y: -10 }}
             >
               <div className="relative overflow-hidden">
-                {/* <Image
+                <Image
                   height={100}
                   width={100}
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                /> */}
+                />
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
                 />

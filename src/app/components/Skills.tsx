@@ -51,7 +51,7 @@ export function Skills() {
             Skills & Technologies
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Here's my toolkit for bringing ideas to life
+            Here&apos;s my toolkit for bringing ideas to life
           </p>
         </motion.div>
 

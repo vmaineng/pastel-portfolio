@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 export function Contact() {
@@ -52,7 +52,7 @@ export function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-            Let&aposj;s Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Have a project in mind or just want to chat? I&aposj;d love to hear
