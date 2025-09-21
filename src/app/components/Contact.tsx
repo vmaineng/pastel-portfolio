@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 export function Contact() {
@@ -26,12 +26,6 @@ export function Contact() {
 
   const contactInfo = [
     {
-      icon: Mail,
-      text: "mvang1865@gmail.com",
-      color: "from-red-400 to-pink-500",
-    },
-
-    {
       icon: MapPin,
       text: "United States",
       color: "from-blue-400 to-indigo-500",
@@ -55,99 +49,12 @@ export function Contact() {
             Let&apos;s Connect
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or just want to chat? I&aposj;d love to hear
+            Have a project in mind or just want to chat? I&apos;d love to hear
             from you!
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <motion.div
-            className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl mb-6 text-gray-800">Send a Message</h3>
-
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-700 mb-2">First Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                    placeholder="John"
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-gray-700 mb-2">Last Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                    placeholder="Doe"
-                  />
-                </motion.div>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <label className="block text-gray-700 mb-2">Email</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                  placeholder="john@example.com"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <label className="block text-gray-700 mb-2">Message</label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
-                  placeholder="Tell me about your project..."
-                />
-              </motion.div>
-
-              <motion.button
-                type="submit"
-                className="w-full px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:shadow-lg transition-all"
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(139, 92, 246, 0.3)",
-                }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                viewport={{ once: true }}
-              >
-                Send Message ✨
-              </motion.button>
-            </form>
-          </motion.div>
-
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,9 +65,9 @@ export function Contact() {
             <div>
               <h3 className="text-2xl mb-6 text-gray-800">Get in Touch</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I&aposj;m always open to discussing new opportunities,
-                interesting projects, or just having a friendly chat about
-                technology and development.
+                I&apos;m open to discussing new opportunities, interesting
+                projects, or just having a friendly chat about technology and
+                development.
               </p>
 
               <div className="space-y-4">

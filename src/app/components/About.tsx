@@ -13,7 +13,7 @@ export function About() {
     {
       icon: Zap,
       title: "Performance",
-      description: "Optimized applications with lightning-fast load times",
+      description: "Optimized applications ",
     },
     {
       icon: Coffee,
@@ -92,13 +92,11 @@ export function About() {
               I&apos;m a frontend engineer who loves turning ideas into
               beautiful, functional web applications. When I&apos;m not coding,
               you&apos;ll find me exploring new technologies, contributing to
-              open source, or enjoying a good cup of coffee while planning my
-              next project.
+              open source, or eating around town.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              I specialize in React, TypeScript, and modern web technologies,
-              always striving to create user experiences that are both
-              delightful and accessible.
+              I specialize in React, TypeScript, Nextjs, always striving to
+              create user experiences that are both delightful and accessible.
             </p>
             <div className="space-y-4">
               {features.map((feature, index) => (

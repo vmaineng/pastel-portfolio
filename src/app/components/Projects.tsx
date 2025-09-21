@@ -12,23 +12,28 @@ export function Projects() {
       image: "/jd.png",
       tech: ["React", "TypeScript", "Tailwind CSS", "OpenAI API"],
       color: "from-pink-400 to-rose-400",
+      githubUrl: "https://jd-ai.vercel.app/",
+      liveUrl: "https://jd-ai.vercel.app/",
     },
     {
-      title: "Data Dashboard",
+      title: "Netflix Mini Player",
       description:
-        "Interactive data visualization dashboard with real-time updates, charts, and analytics. Built for tracking key business metrics.",
-      image: "/jd.png",
-      tech: ["React", "D3.js", "Node.js", "MongoDB"],
+        "Interactive mini player allowing users to continue to watch their movie while being able to stroll other films",
+      image: "/netflix.png",
+      tech: ["React", "Typescript", "Next.js"],
       color: "from-blue-400 to-indigo-400",
+      githubUrl: "https://github.com/vmaineng/netflix-mini-player",
+      liveUrl:
+        "https://netflix-mini-player-aowf1cpar-vmainengs-projects.vercel.app/",
     },
-    {
-      title: "Mobile Banking App",
-      description:
-        "Cross-platform mobile banking application with biometric authentication, transaction history, and budget tracking features.",
-      image: "/jd.png",
-      tech: ["React Native", "Firebase", "Redux", "Expo"],
-      color: "from-green-400 to-emerald-400",
-    },
+    // {
+    //   title: "Mobile Banking App",
+    //   description:
+    //     "Cross-platform mobile banking application with biometric authentication, transaction history, and budget tracking features.",
+    //   image: "/jd.png",
+    //   tech: ["React Native", "Firebase", "Redux", "Expo"],
+    //   color: "from-green-400 to-emerald-400",
+    // },
   ];
 
   return (
@@ -77,20 +82,28 @@ export function Projects() {
                 />
 
                 <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <motion.button
+                  <motion.a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 bg-white rounded-full shadow-lg hover:shadow-xl"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                    title="View Live Demo"
                   >
                     <ExternalLink className="w-4 h-4 text-gray-600" />
-                  </motion.button>
-                  <motion.button
+                  </motion.a>
+                  <motion.a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 bg-white rounded-full shadow-lg hover:shadow-xl"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                    title="View Source Code"
                   >
                     <FaGithub className="w-4 h-4 text-gray-600" />
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
 

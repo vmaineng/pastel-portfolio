@@ -8,28 +8,33 @@ export function Skills() {
     {
       category: "Frontend",
       skills: [
-        { name: "React", level: 95, color: "from-blue-400 to-blue-600" },
-        { name: "TypeScript", level: 90, color: "from-blue-500 to-indigo-600" },
-        { name: "Vue.js", level: 85, color: "from-green-400 to-green-600" },
-        { name: "Tailwind CSS", level: 92, color: "from-cyan-400 to-cyan-600" },
+        { name: "React", color: "from-blue-400 to-blue-600" },
+        { name: "TypeScript", color: "from-blue-500 to-indigo-600" },
+        { name: "Vue.js", color: "from-green-400 to-green-600" },
+        { name: "Tailwind CSS", color: "from-cyan-400 to-cyan-600" },
+        { name: "Next.js", color: "from-gray-600 to-black" },
+        { name: "HTML/CSS", color: "from-orange-400 to-red-500" },
       ],
     },
     {
       category: "Tools & Technologies",
       skills: [
-        { name: "Git", level: 88, color: "from-orange-400 to-red-500" },
-        { name: "Webpack", level: 78, color: "from-blue-400 to-purple-500" },
-        { name: "Jest", level: 82, color: "from-red-400 to-pink-500" },
-        { name: "Figma", level: 85, color: "from-purple-400 to-pink-500" },
+        { name: "Git", color: "from-orange-400 to-red-500" },
+        { name: "Webpack", color: "from-blue-400 to-purple-500" },
+        { name: "Jest", color: "from-red-400 to-pink-500" },
+        { name: "Figma", color: "from-purple-400 to-pink-500" },
+        { name: "Vercel", color: "from-black to-gray-700" },
       ],
     },
     {
       category: "Backend & Database",
       skills: [
-        { name: "Node.js", level: 80, color: "from-green-500 to-green-600" },
-        { name: "Express.js", level: 75, color: "from-gray-500 to-gray-700" },
-        { name: "MongoDB", level: 70, color: "from-green-600 to-green-700" },
-        { name: "PostgreSQL", level: 72, color: "from-blue-600 to-indigo-700" },
+        { name: "Node.js", color: "from-green-500 to-green-600" },
+        { name: "Express.js", color: "from-gray-500 to-gray-700" },
+        { name: "MongoDB", color: "from-green-600 to-green-700" },
+        { name: "PostgreSQL", color: "from-blue-600 to-indigo-700" },
+        { name: "Python", color: "from-yellow-500 to-blue-500" },
+        { name: "REST APIs", color: "from-indigo-400 to-purple-500" },
       ],
     },
   ];
@@ -70,45 +75,50 @@ export function Skills() {
                 {category.category}
               </h3>
 
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {category.skills.map((skill, skillIndex) => (
-                  <div
+                  <motion.div
                     key={skill.name}
+                    className={`px-4 py-2 bg-gradient-to-r ${skill.color} text-white rounded-full text-sm font-medium cursor-pointer relative overflow-hidden group`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.5,
+                      duration: 0.5,
+                    }}
+                    viewport={{ once: true }}
+                    whileHover={{
+                      scale: 1.05,
+                      y: -2,
+                      boxShadow:
+                        "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    }}
                     onMouseEnter={() => setHoveredSkill(skill.name)}
                     onMouseLeave={() => setHoveredSkill(null)}
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700">{skill.name}</span>
-                      <motion.span
-                        className="text-sm text-gray-500"
-                        animate={{
-                          scale: hoveredSkill === skill.name ? 1.1 : 1,
-                          color:
-                            hoveredSkill === skill.name ? "#6366f1" : "#6b7280",
-                        }}
-                      >
-                        {skill.level}%
-                      </motion.span>
-                    </div>
+                    {/* Shine effect on hover */}
+                    <motion.div
+                      className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.6 }}
+                    />
 
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    {skill.name}
+
+                    {/* Tooltip for additional info (optional) */}
+                    {hoveredSkill === skill.name && (
                       <motion.div
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{
-                          delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.5,
-                          duration: 1,
-                          ease: "easeOut",
-                        }}
-                        viewport={{ once: true }}
-                        whileHover={{
-                          boxShadow: "0 0 20px rgba(99, 102, 241, 0.4)",
-                          scale: 1.02,
-                        }}
-                      />
-                    </div>
-                  </div>
+                        className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black text-white text-xs rounded-md whitespace-nowrap"
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                      >
+                        {/* Add any tooltip content here if needed */}
+                        {/* Example: {skill.level}% proficiency */}
+                      </motion.div>
+                    )}
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
