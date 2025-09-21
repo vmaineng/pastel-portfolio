@@ -7,6 +7,7 @@ A modern, responsive portfolio website built with **Next.js 14**, **TypeScript**
 ## 🚀 Live Demo
 
 [View Live Portfolio](https://your-portfolio.vercel.app)
+<br/>
 <img width="908" height="902" alt="Image" src="https://github.com/user-attachments/assets/be73ea04-65be-44a3-b2d2-fbd5edf56543" />
 
 ## ✨ Features
