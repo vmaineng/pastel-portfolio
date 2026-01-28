@@ -29,7 +29,7 @@ export function About() {
     >
       <div className="container mx-auto px-6">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-15"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -47,7 +47,7 @@ export function About() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-15 items-center max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -97,14 +97,21 @@ export function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl mb-6 text-gray-800">Hi, I&apos;m Mai :)</h3>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+            <h3 className="text-4xl font-bold mb-6 text-gray-900 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
+              Hi, I&apos;m Mai :)
+            </h3>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               I&apos;m a software engineer who loves turning ideas into
               beautiful, functional web applications.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              I specialize in React, TypeScript, Nextjs, always striving to
-              create user experiences that are both delightful and accessible.
+            <p className="text-lg text-gray-700 mb-10 leading-relaxed">
+              I specialize in{" "}
+              <span className="font-semibold text-indigo-600">Python</span>,
+              <span className="font-semibold text-indigo-600">React</span>,
+              <span className="font-semibold text-indigo-600">TypeScript</span>,
+              and <span className="font-semibold text-indigo-600">Next.js</span>{" "}
+              Always striving to create user experiences that are both
+              delightful and accessible.
             </p>
             <div className="space-y-4">
               {features.map((feature, index) => (
