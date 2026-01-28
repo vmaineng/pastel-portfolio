@@ -91,7 +91,15 @@ export function Contact() {
                 ))}
               </div>
             </div>
+          </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
             <div>
               <h4 className="text-xl mb-4 text-gray-800">Follow Me</h4>
               <div className="flex space-x-4">

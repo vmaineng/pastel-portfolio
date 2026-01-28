@@ -14,12 +14,12 @@ export function About() {
       title: "Performance",
       description: "Optimized applications ",
     },
-    {
-      icon: Coffee,
-      title: "Collaboration",
-      description:
-        "Great team player who loves brainstorming and problem-solving",
-    },
+    // {
+    //   icon: Coffee,
+    //   title: "Collaboration",
+    //   description:
+    //     "Great team player who loves brainstorming and problem-solving",
+    // },
   ];
 
   return (
@@ -97,9 +97,9 @@ export function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl font-bold mb-6 text-gray-900 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
+            {/* <h3 className="text-4xl font-bold mb-6 text-gray-900 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
               Hi, I&apos;m Mai :)
-            </h3>
+            </h3> */}
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               I&apos;m a software engineer who loves turning ideas into
               beautiful, functional web applications.

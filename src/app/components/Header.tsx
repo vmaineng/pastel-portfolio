@@ -51,8 +51,8 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <nav className="container px-6 py-4">
-        <div className="flex items-center justify-between">
+      <nav className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between w-full">
           <motion.div
             className="text-2xl font-bold text-purple-600"
             whileHover={{ scale: 1.05 }}
@@ -60,7 +60,7 @@ export function Header() {
           >
             Mai V
           </motion.div>
-          <div className="flex-1 hidden md:flex items-center justify-end">
+          <div className="hidden md:flex items-center">
             <div className="flex space-x-8">
               {["Home", "About", "Projects", "Skills", "Contact"].map(
                 (item, index) => (
@@ -81,7 +81,7 @@ export function Header() {
                       transition={{ duration: 0.3 }}
                     />
                   </motion.button>
-                )
+                ),
               )}
             </div>
           </div>
@@ -146,7 +146,7 @@ export function Header() {
                       >
                         {item}
                       </motion.button>
-                    )
+                    ),
                   )}
                 </nav>
               </div>

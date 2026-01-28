@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50"
+      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 pt-16"
     >
       <div className="container mx-auto px-6 text-center">
         <motion.div
@@ -18,7 +18,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl mb-6 bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent"
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{
@@ -32,7 +32,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -48,7 +48,7 @@ export function Hero() {
             transition={{ delay: 0.7, duration: 0.8 }}
           >
             <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:shadow-lg transition-all"
+              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg transition-all"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgba(139, 92, 246, 0.3)",
@@ -64,7 +64,7 @@ export function Hero() {
             </motion.button>
 
             <motion.button
-              className="px-8 py-3 border-2 border-purple-500 text-purple-500 rounded-full hover:bg-purple-500 hover:text-white transition-all"
+              className="px-8 py-3 border-2 border-purple-500 text-purple-500 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() =>
@@ -80,7 +80,7 @@ export function Hero() {
       </div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
@@ -97,7 +97,7 @@ export function Hero() {
 
       {/* Floating elements */}
       <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full opacity-50"
+        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full opacity-50 blur-sm"
         animate={{
           y: [0, -20, 0],
           rotate: [0, 180, 360],
@@ -110,7 +110,7 @@ export function Hero() {
       />
 
       <motion.div
-        className="absolute bottom-32 right-16 w-16 h-16 bg-gradient-to-r from-indigo-200 to-blue-200 rounded-full opacity-50"
+        className="absolute bottom-32 right-16 w-16 h-16 bg-gradient-to-r from-indigo-200 to-blue-200 rounded-full opacity-50 blur-sm"
         animate={{
           y: [0, 15, 0],
           x: [0, -10, 0],
