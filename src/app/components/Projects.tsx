@@ -6,6 +6,16 @@ import Image from "next/image";
 export function Projects() {
   const projects = [
     {
+      title: "Junior Repo Open Source",
+      description:
+        "An AI-powered tool that helps junior developers find GitHub repositories perfect for their first open-source contributions.",
+      image: "/junior.png",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Claude API"],
+      color: "from-blue-400 to-indigo-400",
+      githubUrl: "https://github.com/vmaineng/junior-repo-analyzer-agent",
+      liveUrl: "https://junior-repo-analyzer-agent.vercel.app/",
+    },
+    {
       title: "JD-AI",
       description:
         "AI-powered mock behavorial platform built with React, TypeScript, and OpenAI. Features include writing and speaking behavorial answers and receiving critiques to become better.",
@@ -26,14 +36,6 @@ export function Projects() {
       liveUrl:
         "https://netflix-mini-player-aowf1cpar-vmainengs-projects.vercel.app/",
     },
-    // {
-    //   title: "Mobile Banking App",
-    //   description:
-    //     "Cross-platform mobile banking application with biometric authentication, transaction history, and budget tracking features.",
-    //   image: "/jd.png",
-    //   tech: ["React Native", "Firebase", "Redux", "Expo"],
-    //   color: "from-green-400 to-emerald-400",
-    // },
   ];
 
   return (
