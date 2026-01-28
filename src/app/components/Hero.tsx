@@ -28,7 +28,7 @@ export function Hero() {
               delay: 0.2,
             }}
           >
-            Frontend Engineer
+            Software Engineer
           </motion.h1>
 
           <motion.p
@@ -38,7 +38,7 @@ export function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             Crafting beautiful, interactive web experiences with modern
-            technologies
+            technologies, AI && Open Source
           </motion.p>
 
           <motion.div

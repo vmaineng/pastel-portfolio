@@ -7,8 +7,7 @@ export function About() {
     {
       icon: Code,
       title: "Clean Code",
-      description:
-        "I write maintainable, scalable code that follows best practices",
+      description: "Maintainable and scalable code that follows best practices",
     },
     {
       icon: Zap,
@@ -26,25 +25,29 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+      className="py-20 bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100"
     >
       <div className="container mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             About Me
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Frontend engineer specialized in implementation of design into code
+          <p className="text-sm uppercase tracking-wider text-indigo-600 font-semibold mb-4">
+            Software Engineer & Creative Developer
+          </p>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Specialized in transforming design concepts into production-ready
+            code using modern AI-assisted workflows
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +56,7 @@ export function About() {
           >
             <div className="relative">
               <motion.div
-                className="w-80 h-80 bg-gradient-to-br from-purple-200 via-pink-200 to-indigo-200 rounded-3xl mx-auto"
+                className="w-96 h-96 bg-gradient-to-br from-purple-200 via-pink-300 to-indigo-300 rounded-3xl mx-auto shadow-xl"
                 whileHover={{
                   scale: 1.05,
                   rotate: 2,
@@ -61,22 +64,29 @@ export function About() {
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="absolute inset-4 bg-white rounded-3xl flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-2 bg-white rounded-3xl flex items-center justify-center overflow-hidden shadow-inner">
                   <Image
                     src="/profile.png"
                     width={400}
                     height={400}
-                    className="object-cover"
+                    className="object-cover w-full h-full"
                     alt="Profile Picture"
                   />
                 </div>
               </motion.div>
               <motion.div
-                className="absolute -top-4 -right-4 w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center"
+                className="absolute -top-4 -right-4 w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center text-2xl shadow-lg"
                 animate={{ rotate: [0, 15, -15, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 ✨
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-pink-300 to-pink-400 rounded-full flex items-center justify-center text-xl shadow-lg"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+              >
+                💫
               </motion.div>
             </div>
           </motion.div>
@@ -89,10 +99,8 @@ export function About() {
           >
             <h3 className="text-3xl mb-6 text-gray-800">Hi, I&apos;m Mai :)</h3>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              I&apos;m a frontend engineer who loves turning ideas into
-              beautiful, functional web applications. When I&apos;m not coding,
-              you&apos;ll find me exploring new technologies, contributing to
-              open source, or eating around town.
+              I&apos;m a software engineer who loves turning ideas into
+              beautiful, functional web applications.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               I specialize in React, TypeScript, Nextjs, always striving to
