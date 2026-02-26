@@ -9,6 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.47",
+    "@ai-sdk/google": "^3.0.33",
+    "@ai-sdk/openai": "^3.0.36",
+    "@anthropic-ai/sdk": "^0.78.0",
+    "ai": "^6.0.103",
     "lucide-react": "^0.544.0",
     "motion": "^12.23.16",
     "next": "^16.1.6",
