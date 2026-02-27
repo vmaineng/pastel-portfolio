@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useActionState } from "react";
 import { askAI } from "../actions/chat";
+import ReactMarkdown from "react-markdown";
 
 type Message = {
   role: "user" | "assistant";
@@ -79,7 +80,22 @@ export function ChatSidebar() {
                       : "bg-gray-100 text-gray-800 rounded-bl-none"
                   }`}
                 >
-                  {msg.content}
+                  <ReactMarkdown
+                    components={{
+                      a: ({ href, children }) => (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline text-blue-500 hover:text-blue-700 break-all"
+                        >
+                          {children}
+                        </a>
+                      ),
+                    }}
+                  >
+                    {msg.content}
+                  </ReactMarkdown>
                 </div>
               </div>
             ))}
