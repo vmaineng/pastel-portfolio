@@ -2,8 +2,8 @@ import { motion } from "motion/react";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-purple-900 to-indigo-900 text-white py-12">
-      <div className="container mx-auto px-6">
+    <footer className="relative overflow-hidden border-t border-[#2e2a38] bg-[#111] py-12 text-white">
+      <div className="mx-auto max-w-7xl px-6">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -12,46 +12,52 @@ export function Footer() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
+            className="mb-4 font-mono text-xl uppercase tracking-[0.2em] text-purple-200/90"
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Mai V
+            // Mai V
           </motion.div>
 
+          <p className="mx-auto max-w-md text-sm leading-relaxed text-[#8a7a9a]">
+            Frontend engineer building thoughtful and modern interfaces,
+            AI-powered tools, and open source contributions.
+          </p>
+
           <motion.div
-            className="mt-8 pt-8 border-t border-gray-700 text-gray-400 text-sm"
+            className="mt-8 border-t border-[#2e2a38] pt-6 text-sm text-[#6f627f]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            &copy;{new Date().getFullYear()} Maizee. All rights reserved.
+            © {new Date().getFullYear()} Maizee. All rights reserved.
           </motion.div>
         </motion.div>
       </div>
 
       <motion.div
-        className="absolute bottom-10 left-10 w-12 h-12 bg-gradient-to-r from-pink-400/20 to-purple-400/20 rounded-full"
+        className="pointer-events-none absolute bottom-8 left-8 h-24 w-24 rounded-full bg-purple-400/10 blur-3xl"
         animate={{
-          y: [0, -15, 0],
-          opacity: [0.5, 0.8, 0.5],
+          y: [0, -12, 0],
+          opacity: [0.3, 0.5, 0.3],
         }}
         transition={{
-          duration: 4,
+          duration: 5,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
       <motion.div
-        className="absolute bottom-16 right-16 w-8 h-8 bg-gradient-to-r from-indigo-400/20 to-blue-400/20 rounded-full"
+        className="pointer-events-none absolute bottom-10 right-10 h-20 w-20 rounded-full bg-fuchsia-400/10 blur-3xl"
         animate={{
-          y: [0, -10, 0],
-          x: [0, 5, 0],
-          opacity: [0.3, 0.6, 0.3],
+          y: [0, -8, 0],
+          x: [0, 6, 0],
+          opacity: [0.2, 0.45, 0.2],
         }}
         transition={{
-          duration: 6,
+          duration: 7,
           repeat: Infinity,
           ease: "easeInOut",
         }}

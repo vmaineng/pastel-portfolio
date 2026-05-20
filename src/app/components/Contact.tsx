@@ -8,19 +8,19 @@ export function Contact() {
       icon: FaGithub,
       href: "https://github.com/vmaineng",
       label: "GitHub",
-      color: "hover:text-gray-800",
+      hover: "hover:text-purple-200",
     },
     {
       icon: FaLinkedin,
       href: "https://www.linkedin.com/in/mai-vang-swe/",
       label: "LinkedIn",
-      color: "hover:text-blue-600",
+      hover: "hover:text-purple-200",
     },
     {
       icon: FaTwitter,
       href: "https://x.com/MaiVangSWE",
       label: "Twitter",
-      color: "hover:text-blue-400",
+      hover: "hover:text-purple-200",
     },
   ];
 
@@ -28,97 +28,122 @@ export function Contact() {
     {
       icon: MapPin,
       text: "United States",
-      color: "from-blue-400 to-indigo-500",
     },
   ];
 
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50"
+      className="relative overflow-hidden border-t border-[#2e2a38] bg-[#111] py-24 text-white"
     >
-      <div className="container mx-auto px-6">
+      <div className="pointer-events-none absolute left-0 top-0 h-72 w-72 rounded-full bg-purple-400/10 blur-3xl" />
+
+      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-fuchsia-400/10 blur-3xl" />
+
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Header */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+          <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-purple-300/70">
+            // Contact
+          </p>
+
+          <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
             Let&apos;s Connect
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or just want to chat? I&apos;d love to hear
-            from you!
+
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[#8a7a9a]">
+            Open to discussing frontend engineering, AI products, open source,
+            or interesting ideas floating around the internet at 1:14am.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid gap-10 md:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="rounded-3xl border border-[#2e2a38] bg-[#1a1a1a]/80 p-8 backdrop-blur-xl"
           >
-            <div>
-              <h3 className="text-2xl mb-6 text-gray-800">Get in Touch</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                I&apos;m open to discussing new opportunities, interesting
-                projects, or just having a friendly chat about technology and
-                development.
-              </p>
+            <h3 className="mb-6 text-2xl text-purple-100">Get in Touch</h3>
 
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={info.text}
-                    className="flex items-center space-x-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.2 + 0.3 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02, x: 10 }}
-                  >
-                    <div
-                      className={`p-3 bg-gradient-to-r ${info.color} text-white rounded-lg`}
-                    >
-                      <info.icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-gray-700">{info.text}</span>
-                  </motion.div>
-                ))}
-              </div>
+            <p className="mb-8 leading-relaxed text-[#8a7a9a]">
+              I&apos;m always interested in thoughtful products, collaborative
+              engineering, and conversations about building better user
+              experiences.
+            </p>
+
+            <div className="space-y-4">
+              {contactInfo.map((info, index) => (
+                <motion.div
+                  key={info.text}
+                  className="flex items-center gap-4 rounded-2xl border border-[#2e2a38] bg-[#221f2a] p-4"
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: index * 0.1 + 0.2,
+                    duration: 0.4,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    x: 6,
+                  }}
+                >
+                  <div className="rounded-xl border border-purple-300/10 bg-[#2a2533] p-3 text-purple-200">
+                    <info.icon className="h-5 w-5" />
+                  </div>
+
+                  <span className="text-[#c8bcd8]">{info.text}</span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="rounded-3xl border border-[#2e2a38] bg-[#1a1a1a]/80 p-8 backdrop-blur-xl"
           >
-            <div>
-              <h4 className="text-xl mb-4 text-gray-800">Follow Me</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    className={`p-3 bg-white/60 backdrop-blur-sm rounded-lg text-gray-600 ${social.color} transition-colors shadow-lg`}
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.7 }}
-                    viewport={{ once: true }}
-                  >
-                    <social.icon className="w-6 h-6" />
-                  </motion.a>
-                ))}
-              </div>
+            <h3 className="mb-6 text-2xl text-purple-100">Follow Me</h3>
+
+            <p className="mb-8 leading-relaxed text-[#8a7a9a]">
+              I share engineering thoughts, debugging sessions, open source
+              work, and occasional late-night frontend discoveries.
+            </p>
+
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className={`rounded-2xl border border-[#2e2a38] bg-[#221f2a] p-4 text-[#8a7a9a] transition-colors ${social.hover}`}
+                  whileHover={{
+                    scale: 1.06,
+                    y: -4,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: index * 0.08 + 0.3,
+                    duration: 0.4,
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <social.icon className="h-6 w-6" />
+                </motion.a>
+              ))}
             </div>
           </motion.div>
         </div>
