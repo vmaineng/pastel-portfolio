@@ -44,7 +44,7 @@ const BEYOND_ITEMS = [
 
 export function About() {
   return (
-    <section id="beyond" className="min-h-screen bg-[#111] px-8 xl:px-16 py-24">
+    <section id="about" className="min-h-screen bg-[#111] px-8 xl:px-16 py-24">
       <div className="max-w-7xl mx-auto">
         <motion.p
           className="font-mono text-xs text-[#5a4f6a] tracking-[0.15em] uppercase border-b border-[#2a2535] pb-4 mb-12"

@@ -152,7 +152,7 @@ export function Hero() {
           </div>
 
           {/* Open to Work Badge */}
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-emerald-800 bg-emerald-950 w-fit mt-auto">
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-emerald-800 bg-emerald-950 w-fit ">
             <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
             <span className="font-mono text-xs text-emerald-300">
               Open to work
