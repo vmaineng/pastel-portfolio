@@ -4,65 +4,62 @@ import { useState } from "react";
 
 const PROJECTS = [
   {
-    category: "FINTECH & DATA VIZ",
-    title: "Personal Finance Dashboard",
+    category: "Conference Project",
+    title: "PyCon 2026 Schedule",
     description:
-      "Aggregating fragmented banking data into a unified financial picture with real-time sync and predictive analytics.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-    tech: ["Supabase", "TanStack Query", "Recharts"],
-    tags: ["Data Visualization", "Real-time Sync", "Analytics"],
+      "Enhanced user experience with real-time updates, interactive visualizations, and personalized recommendations.",
+    image: "/pycon.png",
+    tech: ["Supabase", "React.js", "Next.js"],
+    tags: ["AI Chat", "Real-time Sync", "Analytics"],
     accent: "text-emerald-400",
 
     deepDive: {
-      title: "Real-time Financial Aggregation",
+      title: "Personalized Conference Scheduler with AI",
       content:
-        "I designed a synchronization layer that merges fragmented financial data into a single real-time dashboard. I used TanStack Query for caching strategies and optimistic updates while minimizing redundant API calls.",
+        "Why: Lots of conference attendees struggle to choose between simultaneous talks and create a schedule that fits their interests. I built an AI-powered scheduler that generates personalized agendas based on user preferences, past behavior, and real-time updates to talk availability.",
     },
   },
 
   {
     category: "PRODUCTIVITY TOOL",
-    title: "TaskFlow Manager",
+    title: "Junior Repo Analyzer",
     description:
-      "Optimistic UI updates and websocket syncing for zero-latency collaboration.",
+      "Optimized time to not searching through documentation or source code to understand unfamiliar codebases.",
 
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    image: "/junior.png",
 
-    tech: ["React", "Socket.io", "Zustand"],
+    tech: ["React", "GitHub API", "Claude API"],
 
-    tags: ["Optimistic UI", "WebSockets", "Drag & Drop"],
+    tags: ["GitHub API", "WebSockets", "Drag & Drop"],
 
     accent: "text-blue-400",
 
     deepDive: {
-      title: "Optimistic UI Architecture",
+      title: "Open Source Codebase Analyzer with AI",
       content:
-        "I separated temporary client state from confirmed server state to create instant-feeling updates while still preventing race conditions and synchronization drift during collaborative edits.",
+        "Why? When I contribute to new open source projects, I waste a lot of time searching through documentation and source code to understand the codebase. I built an AI-powered tool that generates interactive visualizations of unfamiliar codebases, so I can get up to speed faster and spend more time writing code.",
     },
   },
 
   {
-    category: "REAL-TIME COMMUNICATION",
-    title: "ChatReal Messaging",
+    category: "HR-Powered Mock Interviews",
+    title: "JD-AI",
 
     description:
-      "Scaling real-time communication infrastructure with websocket presence and event queues.",
+      "Simulated real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
 
-    image:
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop",
+    image: "/jd.png",
 
-    tech: ["Redis", "Next.js", "WebSockets"],
+    tech: ["Voice-Powered", "Next.js", "React.js"],
 
-    tags: ["Presence", "Pub/Sub", "Live Chat"],
+    tags: ["Voice", "Pub/Sub", "Live Chat"],
 
     accent: "text-purple-400",
 
     deepDive: {
-      title: "Websocket Presence System",
+      title: "AI-Powered Mock Interview Platform",
       content:
-        "I implemented scalable websocket presence tracking using Redis pub/sub patterns to maintain active user state across distributed realtime connections.",
+        "Why? Traditional mock interview platforms often fail to replicate the dynamic nature of real interviews, leaving candidates underprepared. I built an AI-powered mock interview platform that simulates real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
     },
   },
 ];

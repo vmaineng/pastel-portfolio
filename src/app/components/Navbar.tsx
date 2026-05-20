@@ -9,6 +9,7 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -47,6 +48,7 @@ export function Navbar() {
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      // Reduced from 0.8s — snappier, less time before user can interact
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <nav className="w-full mx-auto px-8 py-4 flex items-center justify-between">
@@ -67,6 +69,7 @@ export function Navbar() {
               onClick={() => scrollToSection(item.toLowerCase())}
               className="relative font-mono text-sm text-[#8a7a9a] hover:text-purple-200 transition-colors"
               whileHover={{ y: -1 }}
+              // staggered entrance — kept but shortened delay so it feels faster
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 + 0.2, duration: 0.3 }}
@@ -127,6 +130,7 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -136,7 +140,7 @@ export function Navbar() {
             animate="open"
             exit="closed"
           >
-            <div className="max-w-7 mx-auto px-8 py-6 flex flex-col gap-5">
+            <div className="max-w-5xl mx-auto px-8 py-6 flex flex-col gap-5">
               {NAV_ITEMS.map((item, index) => (
                 <motion.button
                   key={item}
