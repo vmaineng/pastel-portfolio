@@ -1,144 +1,126 @@
 import { motion } from "motion/react";
-import { Code, Coffee, Zap } from "lucide-react";
-import Image from "next/image";
+
+const BEYOND_ITEMS = [
+  {
+    tag: "Open Source",
+    tagColor: "text-purple-300",
+    accentColor: "bg-purple-300/60",
+    title: ["Contributing to", "the Community"],
+    body: "I regularly contribute to open source projects like PostHog — fixing bugs, shipping features, and reading through codebases I didn't write. It keeps me sharp and connected to what's being built in the real world.",
+    link: {
+      label: "View my contributions",
+      href: "https://github.com/vmaineng",
+    },
+    image: "/images/opensource.jpg",
+    imageAlt: "Open source contribution",
+    reverse: false,
+  },
+  {
+    tag: "Twitch / Teaching",
+    tagColor: "text-rose-300",
+    accentColor: "bg-rose-300/60",
+    title: ["I Teach &", "Stream Live"],
+    body: "Coding in public. I stream my open source contributions, project builds, and technical deep-dives on Twitch. Come hang and learn something.",
+    link: {
+      label: "Watch on Twitch",
+      href: "https://www.twitch.tv/maiproject218",
+    },
+    image: "/images/twitch.jpg",
+    imageAlt: "Twitch stream setup",
+    reverse: true,
+  },
+  {
+    tag: "Los Angeles",
+    tagColor: "text-emerald-300",
+    accentColor: "bg-emerald-300/60",
+    title: ["Always Eating", "Around LA"],
+    body: "When I'm not at my desk, I'm somewhere in LA with a bowl in front of me. From SGV noodles to Koreatown BBQ to hidden gem brunch spots. Please send me recommendations",
+    link: null,
+    image: "/images/la-food.jpg",
+    imageAlt: "Los Angeles food",
+    reverse: false,
+  },
+];
 
 export function About() {
-  const features = [
-    {
-      icon: Code,
-      title: "Clean Code",
-      description: "Maintainable and scalable code that follows best practices",
-    },
-    {
-      icon: Zap,
-      title: "Performance",
-      description: "Optimized applications ",
-    },
-    // {
-    //   icon: Coffee,
-    //   title: "Collaboration",
-    //   description:
-    //     "Great team player who loves brainstorming and problem-solving",
-    // },
-  ];
-
   return (
-    <section
-      id="about"
-      className="py-20 bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100"
-    >
-      <div className="container mx-auto px-6">
-        <motion.div
-          className="text-center mb-15"
-          initial={{ opacity: 0, y: 50 }}
+    <section id="beyond" className="min-h-screen bg-[#111] px-8 xl:px-16 py-24">
+      <div className="max-w-7xl mx-auto">
+        <motion.p
+          className="font-mono text-xs text-[#5a4f6a] tracking-[0.15em] uppercase border-b border-[#2a2535] pb-4 mb-12"
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            About Me
-          </h2>
-          <p className="text-sm uppercase tracking-wider text-indigo-600 font-semibold mb-4">
-            Software Engineer & Creative Developer
-          </p>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Specialized in transforming design concepts into production-ready
-            code using modern AI-assisted workflows
-          </p>
-        </motion.div>
+          // <span className="text-purple-300">Beyond the IDE</span> — what i do
+          when i&apos;m not pushing code
+        </motion.p>
 
-        <div className="grid md:grid-cols-2 gap-15 items-center max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative">
-              <motion.div
-                className="w-96 h-96 bg-gradient-to-br from-purple-200 via-pink-300 to-indigo-300 rounded-3xl mx-auto shadow-xl"
-                whileHover={{
-                  scale: 1.05,
-                  rotate: 2,
-                  boxShadow: "0 25px 50px -12px rgba(139, 92, 246, 0.25)",
-                }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="absolute inset-2 bg-white rounded-3xl flex items-center justify-center overflow-hidden shadow-inner">
-                  <Image
-                    src="/profile.png"
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full"
-                    alt="Profile Picture"
-                  />
-                </div>
-              </motion.div>
-              <motion.div
-                className="absolute -top-4 -right-4 w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center text-2xl shadow-lg"
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                ✨
-              </motion.div>
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-pink-300 to-pink-400 rounded-full flex items-center justify-center text-xl shadow-lg"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              >
-                💫
-              </motion.div>
-            </div>
-          </motion.div>
+        <div className="flex flex-col gap-5">
+          {BEYOND_ITEMS.map((item, i) => (
+            <motion.div
+              key={item.tag}
+              className={`flex ${item.reverse ? "flex-row-reverse" : "flex-row"} items-stretch rounded-2xl border border-[#2e2a38] overflow-hidden bg-[#1a1620]`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              {/* Accent bar */}
+              <div className={`w-1 shrink-0 ${item.accentColor}`} />
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            {/* <h3 className="text-4xl font-bold mb-6 text-gray-900 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
-              Hi, I&apos;m Mai :)
-            </h3> */}
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              I&apos;m a software engineer who loves turning ideas into
-              beautiful, functional web applications.
-            </p>
-            <p className="text-lg text-gray-700 mb-10 leading-relaxed">
-              I specialize in{" "}
-              <span className="font-semibold text-indigo-600">Python</span>,
-              <span className="font-semibold text-indigo-600">React</span>,
-              <span className="font-semibold text-indigo-600">TypeScript</span>,
-              and <span className="font-semibold text-indigo-600">Next.js</span>{" "}
-              Always striving to create user experiences that are both
-              delightful and accessible.
-            </p>
-            <div className="space-y-4">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  className="flex items-center space-x-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, x: 10 }}
+              <div className="w-64 xl:w-80 shrink-0 bg-[#221f2a] min-h-[180px]">
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col justify-center gap-3 px-8 py-8 flex-1">
+                <span
+                  className={`font-mono text-[11px] uppercase tracking-widest ${item.tagColor}`}
                 >
-                  <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg">
-                    <feature.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">
-                      {feature.title}
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      {feature.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                  {item.tag}
+                </span>
+                <h2
+                  className="text-[#f2ede6] leading-none tracking-wide"
+                  style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: "clamp(24px, 3vw, 36px)",
+                  }}
+                >
+                  {item.title[0]}
+                  <br />
+                  {item.title[1]}
+                </h2>
+                <p className="text-[#8a7a9a] text-sm leading-relaxed max-w-md">
+                  {item.body}
+                </p>
+                {item.link && (
+                  <a
+                    href={item.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1.5 font-mono text-xs mt-1 ${item.tagColor} hover:opacity-70 transition-opacity`}
+                  >
+                    {item.link.label}
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 6h8M6 2l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
