@@ -34,46 +34,43 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-[#2e2a38] bg-[#111] py-24 text-white"
+      className="relative overflow-hidden border-t border-[#2e2a38] bg-[#111] px-6 py-24 text-white"
     >
-      <div className="pointer-events-none absolute left-0 top-0 h-72 w-72 rounded-full bg-purple-400/10 blur-3xl" />
-
-      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-fuchsia-400/10 blur-3xl" />
-
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Header */}
+      <div className="mx-auto max-w-7xl">
         <motion.div
-          className="mb-16 text-center"
+          className="mb-14"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-purple-300/70">
+          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-purple-300/70">
             // Contact
           </p>
 
-          <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
+          <h2 className="text-5xl font-bold tracking-tight">
             Let&apos;s Connect
           </h2>
 
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[#8a7a9a]">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/60">
             Open to discussing frontend engineering, AI products, open source,
             or interesting ideas floating around the internet at 1:14am.
           </p>
         </motion.div>
 
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-[#2e2a38] bg-[#1a1a1a]/80 p-8 backdrop-blur-xl"
+            className="group overflow-hidden rounded-3xl border border-[#2e2a38]/10 bg-[#1a1a1a]/[0.03] p-8 backdrop-blur-xl"
           >
-            <h3 className="mb-6 text-2xl text-purple-100">Get in Touch</h3>
+            <h3 className="mb-4 text-3xl font-bold tracking-tight text-purple-100">
+              Get in Touch
+            </h3>
 
-            <p className="mb-8 leading-relaxed text-[#8a7a9a]">
+            <p className="mb-8 text-sm leading-relaxed text-white/65">
               I&apos;m always interested in thoughtful products, collaborative
               engineering, and conversations about building better user
               experiences.
@@ -83,7 +80,7 @@ export function Contact() {
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.text}
-                  className="flex items-center gap-4 rounded-2xl border border-[#2e2a38] bg-[#221f2a] p-4"
+                  className="flex items-center gap-4 rounded-2xl border border-purple-300/10 bg-[#221f2a] p-4"
                   initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
@@ -99,22 +96,24 @@ export function Contact() {
                     <info.icon className="h-5 w-5" />
                   </div>
 
-                  <span className="text-[#c8bcd8]">{info.text}</span>
+                  <span className="text-[#c8bcd8] text-sm">{info.text}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-[#2e2a38] bg-[#1a1a1a]/80 p-8 backdrop-blur-xl"
+            className="group overflow-hidden rounded-3xl border border-[#2e2a38]/10 bg-[#1a1a1a]/[0.03] p-8 backdrop-blur-xl"
           >
-            <h3 className="mb-6 text-2xl text-purple-100">Follow Me</h3>
+            <h3 className="mb-4 text-3xl font-bold tracking-tight text-purple-100">
+              Follow Me
+            </h3>
 
-            <p className="mb-8 leading-relaxed text-[#8a7a9a]">
+            <p className="mb-8 text-sm leading-relaxed text-white/65">
               I share engineering thoughts, debugging sessions, open source
               work, and occasional late-night frontend discoveries.
             </p>
@@ -127,7 +126,7 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className={`rounded-2xl border border-[#2e2a38] bg-[#221f2a] p-4 text-[#8a7a9a] transition-colors ${social.hover}`}
+                  className={`rounded-2xl border border-purple-300/10 bg-[#221f2a] p-4 text-[#8a7a9a] transition-colors ${social.hover}`}
                   whileHover={{
                     scale: 1.06,
                     y: -4,
@@ -148,6 +147,10 @@ export function Contact() {
           </motion.div>
         </div>
       </div>
+
+      <div className="pointer-events-none absolute left-0 top-0 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl" />
+
+      <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
     </section>
   );
 }

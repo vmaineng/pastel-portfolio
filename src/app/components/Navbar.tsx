@@ -19,7 +19,7 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  const NAV_ITEMS = ["Home", "About", "Projects", "Skills", "Contact"];
+  const NAV_ITEMS = ["Home", "About", "Projects", "Contact"];
 
   const hamburgerVariants: Variants = {
     closed: { rotate: 0 },
@@ -48,11 +48,9 @@ export function Navbar() {
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      // Reduced from 0.8s — snappier, less time before user can interact
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <nav className="w-full mx-auto px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
         <motion.button
           onClick={() => scrollToSection("home")}
           className="font-mono text-sm text-purple-300/80 tracking-[0.18em] uppercase hover:text-purple-200 transition-colors"
@@ -69,7 +67,6 @@ export function Navbar() {
               onClick={() => scrollToSection(item.toLowerCase())}
               className="relative font-mono text-sm text-[#8a7a9a] hover:text-purple-200 transition-colors"
               whileHover={{ y: -1 }}
-              // staggered entrance — kept but shortened delay so it feels faster
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 + 0.2, duration: 0.3 }}
@@ -130,7 +127,6 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

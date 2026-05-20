@@ -2,66 +2,38 @@ import { motion } from "motion/react";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#2e2a38] bg-[#111] py-12 text-white">
-      <div className="mx-auto max-w-7xl px-6">
+    <footer className="relative overflow-hidden border-t border-[#2e2a38]/40 bg-[#111] px-6 py-12 text-white">
+      <div className="mx-auto max-w-7xl">
         <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
+          className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            className="mb-4 font-mono text-xl uppercase tracking-[0.2em] text-purple-200/90"
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            // Mai V
-          </motion.div>
+          <div className="space-y-3">
+            <motion.div
+              className="inline-block font-mono text-sm uppercase tracking-[0.18em] text-purple-300/80"
+              whileHover={{ x: 4 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              // Mai V
+            </motion.div>
 
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-[#8a7a9a]">
-            Frontend engineer building thoughtful and modern interfaces,
-            AI-powered tools, and open source contributions.
-          </p>
+            <p className="max-w-md text-xs leading-relaxed text-white/50">
+              Software engineer building thoughtful interfaces, AI-powered
+              tools, and open source contributions.
+            </p>
+          </div>
 
-          <motion.div
-            className="mt-8 border-t border-[#2e2a38] pt-6 text-sm text-[#6f627f]"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-xs tracking-wide text-white/40 sm:text-right">
             © {new Date().getFullYear()} Maizee. All rights reserved.
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 
-      <motion.div
-        className="pointer-events-none absolute bottom-8 left-8 h-24 w-24 rounded-full bg-purple-400/10 blur-3xl"
-        animate={{
-          y: [0, -12, 0],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="pointer-events-none absolute bottom-10 right-10 h-20 w-20 rounded-full bg-fuchsia-400/10 blur-3xl"
-        animate={{
-          y: [0, -8, 0],
-          x: [0, 6, 0],
-          opacity: [0.2, 0.45, 0.2],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-purple-500/[0.04] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-48 w-48 rounded-full bg-cyan-500/[0.04] blur-3xl" />
     </footer>
   );
 }
