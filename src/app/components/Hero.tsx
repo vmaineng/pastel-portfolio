@@ -92,11 +92,11 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-[#111] px-8 pt-16"
+      className="min-h-screen flex items-center justify-center bg-[#111] px-4 sm:px-8 pt-16"
     >
-      <div className="w-full max-w-7xl flex gap-8 items-stretch">
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8 items-stretch">
         <motion.div
-          className="flex flex-col gap-4 w-72 lg:w-80 xl:w-96 shrink-0"
+          className="flex flex-col gap-4 w-full lg:w-80 xl:w-96 lg:shrink-0"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
@@ -105,8 +105,7 @@ export function Hero() {
             // Software Engineer
           </p>
 
-          {/* Photo Frame */}
-          <div className="relative w-full h-56 rounded-2xl overflow-hidden border-[1.5px] border-purple-300/40 shrink-0">
+          <div className="relative w-full h-64 lg:h-56 rounded-2xl overflow-hidden border-[1.5px] border-purple-300/40 shrink-0">
             <Image
               src="/profile.png"
               alt="Profile Picture"
@@ -114,7 +113,7 @@ export function Hero() {
               height={400}
               className="w-full h-full object-cover object-top"
             />
-            {/* Name overlay */}
+
             <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-[#1a1420]/85 rounded-b-2xl">
               <p
                 className="text-2xl text-[#f2ede6] tracking-wide leading-tight"
@@ -128,13 +127,12 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Typewriter Role */}
           <div className="font-mono text-sm text-purple-200/60 h-6 flex items-center gap-1.5">
             {role}
             <span className="inline-block w-2 h-3.5 bg-purple-300/70 animate-pulse" />
           </div>
 
-          <div className="flex flex-col gap-2.5">
+          <div className="grid grid-cols-2 sm:flex sm:flex-col gap-2.5">
             {STACK.map((s) => (
               <div
                 key={s.label}
@@ -151,8 +149,7 @@ export function Hero() {
             ))}
           </div>
 
-          {/* Open to Work Badge */}
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-emerald-800 bg-emerald-950 w-fit ">
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-emerald-800 bg-emerald-950 w-fit">
             <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
             <span className="font-mono text-xs text-emerald-300">
               Open to work
@@ -170,7 +167,7 @@ export function Hero() {
             // Receipts — things I&apos;ve actually shipped
           </p>
 
-          <div className="grid grid-cols-2 gap-4 flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
             {RECEIPTS.map((r) => (
               <motion.div
                 key={r.title}
@@ -197,9 +194,9 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <motion.button
-              className="px-8 py-3 rounded-full bg-purple-200 text-[#1a1420] text-sm font-bold tracking-wide hover:bg-purple-100 transition-colors"
+              className="flex-1 min-w-[140px] px-8 py-3 rounded-full bg-purple-200 text-[#1a1420] text-sm font-bold tracking-wide hover:bg-purple-100 transition-colors"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => scrollTo("projects")}
@@ -207,7 +204,7 @@ export function Hero() {
               View Projects →
             </motion.button>
             <motion.button
-              className="px-8 py-3 rounded-full border border-[#3a3348] text-[#c8bcd8] text-sm hover:border-purple-300/50 hover:text-purple-200 transition-colors"
+              className="flex-1 min-w-[140px] px-8 py-3 rounded-full border border-[#3a3348] text-[#c8bcd8] text-sm hover:border-purple-300/50 hover:text-purple-200 transition-colors"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => scrollTo("contact")}

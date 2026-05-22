@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#2e2a38]/40 bg-[#111] px-6 py-12 text-white">
+    <footer className="relative overflow-hidden border-t border-[#3a3050] bg-[#111] px-4 sm:px-6 py-10 sm:py-12 text-white">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
@@ -13,20 +13,20 @@ export function Footer() {
         >
           <div className="space-y-3">
             <motion.div
-              className="inline-block font-mono text-sm uppercase tracking-[0.18em] text-purple-300/80"
+              className="inline-block font-mono text-sm uppercase tracking-[0.18em] text-purple-300"
               whileHover={{ x: 4 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               // Mai V
             </motion.div>
 
-            <p className="max-w-md text-xs leading-relaxed text-white/50">
+            <p className="max-w-md text-xs leading-relaxed text-[#8a7a9a]">
               Software engineer building thoughtful interfaces, AI-powered
               tools, and open source contributions.
             </p>
           </div>
 
-          <div className="text-xs tracking-wide text-white/40 sm:text-right">
+          <div className="text-xs tracking-wide text-[#5a4f6a] sm:text-right">
             © {new Date().getFullYear()} Maizee. All rights reserved.
           </div>
         </motion.div>

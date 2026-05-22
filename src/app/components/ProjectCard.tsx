@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export interface ProjectType {
   category: string;
@@ -31,7 +32,7 @@ function BrowserDots() {
   );
 }
 
-function ProjectCard({ project, index }: ProjectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -51,17 +52,19 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="h-2 w-32 rounded-full bg-white/10" />
       </div>
 
-      <div className="relative h-56 overflow-hidden">
-        <img
+      <div className="relative h-44 sm:h-56 overflow-hidden">
+        <Image
           src={project.image}
           alt={project.title}
+          width={500}
+          height={300}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent" />
       </div>
 
-      <div className="space-y-5 p-6">
+      <div className="space-y-5 p-4 sm:p-6">
         <div>
           <div
             className={`mb-2 text-xs font-semibold tracking-[0.2em] ${project.accent}`}
@@ -70,7 +73,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
 
           <div className="flex items-start justify-between gap-4">
-            <h3 className="text-3xl font-bold leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold leading-tight">
               {project.title}
             </h3>
 

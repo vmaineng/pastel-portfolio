@@ -44,7 +44,10 @@ const BEYOND_ITEMS = [
 
 export function About() {
   return (
-    <section id="about" className="min-h-screen bg-[#111] px-8 xl:px-16 py-24">
+    <section
+      id="about"
+      className="min-h-screen bg-[#111] px-4 sm:px-8 xl:px-16 py-24"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.p
           className="font-mono text-xs text-[#5a4f6a] tracking-[0.15em] uppercase border-b border-[#2a2535] pb-4 mb-12"
@@ -53,7 +56,7 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          // <span className="text-purple-300">Beyond the IDE</span> — what i do
+          <span className="text-purple-300">Beyond the IDE</span> — what i do
           when i&apos;m not pushing code
         </motion.p>
 
@@ -61,16 +64,19 @@ export function About() {
           {BEYOND_ITEMS.map((item, i) => (
             <motion.div
               key={item.tag}
-              className={`flex ${item.reverse ? "flex-row-reverse" : "flex-row"} items-stretch rounded-2xl border border-[#2e2a38] overflow-hidden bg-[#1a1620]`}
+              className={`flex flex-col ${
+                item.reverse ? "md:flex-row-reverse" : "md:flex-row"
+              } items-stretch rounded-2xl border border-[#2e2a38] overflow-hidden bg-[#1a1620]`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              {/* Accent bar */}
-              <div className={`w-1 shrink-0 ${item.accentColor}`} />
+              <div
+                className={`h-1 w-full md:h-auto md:w-1 shrink-0 ${item.accentColor}`}
+              />
 
-              <div className="w-64 xl:w-80 shrink-0 bg-[#221f2a] min-h-[180px]">
+              <div className="w-full h-48 md:w-64 md:h-auto xl:w-80 shrink-0 bg-[#221f2a]">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
@@ -79,7 +85,7 @@ export function About() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col justify-center gap-3 px-8 py-8 flex-1">
+              <div className="flex flex-col justify-center gap-3 px-5 py-6 md:px-8 md:py-8 flex-1">
                 <span
                   className={`font-mono text-[11px] uppercase tracking-widest ${item.tagColor}`}
                 >
