@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -39,17 +41,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.08,
-      }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
       viewport={{ once: true }}
-      className="group overflow-hidden rounded-3xl border border-[#2e2a38]/10 bg-[#1a1a1a]/[0.03] backdrop-blur-xl"
+      className="group overflow-hidden rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] transition-colors duration-300"
     >
-      <div className="flex items-center justify-between border-b border-[#2e2a38]/10 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-[var(--card-border)] px-5 py-4 transition-colors duration-300">
         <BrowserDots />
-
-        <div className="h-2 w-32 rounded-full bg-white/10" />
+        <div className="h-2 w-32 rounded-full bg-[var(--card-border)]" />
       </div>
 
       <div className="relative h-44 sm:h-56 overflow-hidden">
@@ -60,8 +58,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           height={300}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/20 to-transparent" />
       </div>
 
       <div className="space-y-5 p-4 sm:p-6">
@@ -71,17 +68,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           >
             {project.category}
           </div>
-
           <div className="flex items-start justify-between gap-4">
-            <h3 className="text-2xl sm:text-3xl font-bold leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-[var(--text-primary)] transition-colors duration-300">
               {project.title}
             </h3>
-
-            <ArrowUpRight className="mt-1 h-5 w-5 text-white/40 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
+            <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-[var(--text-muted)] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[var(--text-primary)]" />
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-white/65">
+        <p className="text-sm leading-relaxed text-[var(--text-secondary)] transition-colors duration-300">
           {project.description}
         </p>
 
@@ -89,19 +84,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tech.map((item) => (
             <span
               key={item}
-              className="rounded-md border border-purple-300/10 bg-[#221f2a] text-purple-200/80 px-3 py-1 text-xs "
+              className="rounded-md border border-purple-300/20 bg-[var(--card-bg-alt)] text-[var(--accent-purple)] px-3 py-1 text-xs transition-colors duration-300"
             >
               {item}
             </span>
           ))}
         </div>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 pt-1">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[#2e2a38]/10 bg-[#1a1a1a]/[0.03] px-3 py-1 text-[10px] uppercase tracking-wider text-white/50"
+              className="rounded-full border border-[var(--card-border)] bg-[var(--card-bg-alt)] px-3 py-1 text-[10px] uppercase tracking-wider text-[var(--text-muted)] transition-colors duration-300"
             >
               {tag}
             </span>
@@ -110,16 +104,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         <button
           onClick={() => setOpen(!open)}
-          className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#2e2a38]/10 bg-[#1a1a1a]/[0.02] py-3 text-sm text-white/70 transition hover:bg-[#1a1a1a]/[0.05]"
+          className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg-alt)] py-3 text-sm text-[var(--text-secondary)] transition-colors duration-300 hover:border-[var(--accent-purple)] hover:text-[var(--accent-purple)]"
         >
           <span>{"</>"}</span>
-
           {open ? "Hide Technical Deep Dive" : "Technical Deep Dive"}
-
           <ChevronDown
-            className={`h-4 w-4 transition-transform ${
-              open ? "rotate-180" : ""
-            }`}
+            className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
           />
         </button>
 
@@ -132,12 +122,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               transition={{ duration: 0.25 }}
               className="overflow-hidden"
             >
-              <div className="rounded-2xl border border-purple-300/10 bg-black/30 p-5">
-                <p className="mb-3 text-xs uppercase tracking-[0.2em] text-purple-200/80">
+              <div className="rounded-2xl border border-purple-300/20 bg-[var(--card-bg-alt)] p-4 sm:p-5 transition-colors duration-300">
+                <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--accent-purple)]">
                   {project.deepDive.title}
                 </p>
-
-                <p className="text-sm leading-relaxed text-white/70">
+                <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                   {project.deepDive.content}
                 </p>
               </div>

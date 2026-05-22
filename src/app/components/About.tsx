@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 
 const BEYOND_ITEMS = [
@@ -46,11 +48,11 @@ export function About() {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[#111] px-4 sm:px-8 xl:px-16 py-24"
+      className="min-h-screen bg-[var(--background)] px-4 sm:px-8 xl:px-16 py-24 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
-          className="font-mono text-xs text-[#5a4f6a] tracking-[0.15em] uppercase border-b border-[#2a2535] pb-4 mb-12"
+          className="font-mono text-xs text-[var(--text-muted)] tracking-[0.15em] uppercase border-b border-[var(--card-border)] pb-4 mb-12 transition-colors duration-300"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -66,17 +68,19 @@ export function About() {
               key={item.tag}
               className={`flex flex-col ${
                 item.reverse ? "md:flex-row-reverse" : "md:flex-row"
-              } items-stretch rounded-2xl border border-[#2e2a38] overflow-hidden bg-[#1a1620]`}
+              } items-stretch rounded-2xl border border-[var(--card-border)] overflow-hidden bg-[var(--card-bg)] transition-colors duration-300`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
+              {/* Accent bar */}
               <div
                 className={`h-1 w-full md:h-auto md:w-1 shrink-0 ${item.accentColor}`}
               />
 
-              <div className="w-full h-48 md:w-64 md:h-auto xl:w-80 shrink-0 bg-[#221f2a]">
+              {/* Image */}
+              <div className="w-full h-48 md:w-64 md:h-auto xl:w-80 shrink-0 bg-[var(--card-bg-alt)] transition-colors duration-300">
                 <img
                   src={item.image}
                   alt={item.imageAlt}
@@ -92,7 +96,7 @@ export function About() {
                   {item.tag}
                 </span>
                 <h2
-                  className="text-[#f2ede6] leading-none tracking-wide"
+                  className="text-[var(--text-primary)] leading-none tracking-wide transition-colors duration-300"
                   style={{
                     fontFamily: "'Bebas Neue', sans-serif",
                     fontSize: "clamp(24px, 3vw, 36px)",
@@ -102,7 +106,7 @@ export function About() {
                   <br />
                   {item.title[1]}
                 </h2>
-                <p className="text-[#8a7a9a] text-sm leading-relaxed max-w-md">
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-md transition-colors duration-300">
                   {item.body}
                 </p>
                 {item.link && (

@@ -1,3 +1,5 @@
+"use client";
+
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
@@ -52,14 +54,14 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#111] px-4 sm:px-6 py-16 sm:py-24 text-white"
+      className="relative overflow-hidden bg-[var(--background)] px-4 sm:px-6 py-16 sm:py-24 transition-colors duration-300"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] transition-colors duration-300">
             More Projects
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/60">
+          <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] transition-colors duration-300">
             Here are a few problems I&apos;ve solved.
           </p>
         </div>

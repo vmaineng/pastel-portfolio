@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
@@ -31,7 +33,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-[#2e2a38] bg-[#111] px-4 sm:px-6 py-16 sm:py-24 text-white"
+      className="relative overflow-hidden border-t border-[var(--card-border)] bg-[var(--background)] px-4 sm:px-6 py-16 sm:py-24 transition-colors duration-300"
     >
       <div className="mx-auto max-w-7xl">
         <motion.div
@@ -45,11 +47,11 @@ export function Contact() {
             // Contact
           </p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] transition-colors duration-300">
             Let&apos;s Connect
           </h2>
 
-          <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-[#8a7a9a]">
+          <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-[var(--text-secondary)] transition-colors duration-300">
             Open to discussing frontend engineering, AI products, open source,
             or interesting ideas floating around the internet at 1:14am.
           </p>
@@ -61,13 +63,13 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-[#3a3050] bg-[#1e1a2a] p-5 sm:p-8"
+            className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 sm:p-8 transition-colors duration-300"
           >
-            <h3 className="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-purple-100">
+            <h3 className="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-primary)] transition-colors duration-300">
               Get in Touch
             </h3>
 
-            <p className="mb-5 sm:mb-8 text-sm leading-relaxed text-[#8a7a9a]">
+            <p className="mb-5 sm:mb-8 text-sm leading-relaxed text-[var(--text-secondary)] transition-colors duration-300">
               I&apos;m always interested in thoughtful products, collaborative
               engineering, and conversations about building better user
               experiences.
@@ -77,17 +79,19 @@ export function Contact() {
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.text}
-                  className="flex items-center gap-4 rounded-2xl border border-purple-300/10 bg-[#221f2a] p-4"
+                  className="flex items-center gap-4 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg-alt)] p-4 transition-colors duration-300"
                   initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
                   viewport={{ once: true }}
                   whileHover={{ x: 6 }}
                 >
-                  <div className="rounded-xl border border-purple-300/10 bg-[#2a2533] p-3 text-purple-300">
+                  <div className="rounded-xl border border-[var(--card-border)] bg-[var(--background)] p-3 text-[var(--accent-purple)] transition-colors duration-300">
                     <info.icon className="h-5 w-5" />
                   </div>
-                  <span className="text-[#c8bcd8] text-sm">{info.text}</span>
+                  <span className="text-[var(--text-secondary)] text-sm transition-colors duration-300">
+                    {info.text}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -98,13 +102,13 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-[#3a3050] bg-[#1e1a2a] p-5 sm:p-8"
+            className="rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] p-5 sm:p-8 transition-colors duration-300"
           >
-            <h3 className="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-purple-100">
+            <h3 className="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-primary)] transition-colors duration-300">
               Follow Me
             </h3>
 
-            <p className="mb-5 sm:mb-8 text-sm leading-relaxed text-[#8a7a9a]">
+            <p className="mb-5 sm:mb-8 text-sm leading-relaxed text-[var(--text-secondary)] transition-colors duration-300">
               I share engineering thoughts, debugging sessions, open source
               work, and occasional late-night frontend discoveries.
             </p>
@@ -117,7 +121,7 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="rounded-2xl border border-purple-300/10 bg-[#221f2a] p-4 text-purple-200/60 transition-colors hover:text-purple-200 hover:border-purple-300/40"
+                  className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg-alt)] p-4 text-[var(--accent-purple)] transition-all duration-300 hover:border-[var(--accent-purple)] hover:opacity-80"
                   whileHover={{ scale: 1.06, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 15 }}

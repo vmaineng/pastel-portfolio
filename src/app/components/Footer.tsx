@@ -1,8 +1,10 @@
+"use client";
+
 import { motion } from "motion/react";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#3a3050] bg-[#111] px-4 sm:px-6 py-10 sm:py-12 text-white">
+    <footer className="relative overflow-hidden border-t border-[var(--card-border)] bg-[var(--background)] px-4 sm:px-6 py-10 sm:py-12 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
@@ -20,13 +22,13 @@ export function Footer() {
               // Mai V
             </motion.div>
 
-            <p className="max-w-md text-xs leading-relaxed text-[#8a7a9a]">
+            <p className="max-w-md text-xs leading-relaxed text-[var(--text-secondary)] transition-colors duration-300">
               Software engineer building thoughtful interfaces, AI-powered
               tools, and open source contributions.
             </p>
           </div>
 
-          <div className="text-xs tracking-wide text-[#5a4f6a] sm:text-right">
+          <div className="text-xs tracking-wide text-[var(--text-muted)] sm:text-right transition-colors duration-300">
             © {new Date().getFullYear()} Maizee. All rights reserved.
           </div>
         </motion.div>

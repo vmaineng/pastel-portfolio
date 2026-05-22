@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -92,7 +94,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-[#111] px-4 sm:px-8 pt-16"
+      className="min-h-screen flex items-center justify-center bg-[var(--background)] px-4 sm:px-8 pt-16 transition-colors duration-300"
     >
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8 items-stretch">
         <motion.div
@@ -113,10 +115,9 @@ export function Hero() {
               height={400}
               className="w-full h-full object-cover object-top"
             />
-
-            <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-[#1a1420]/85 rounded-b-2xl">
+            <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-[var(--card-bg)]/85 rounded-b-2xl">
               <p
-                className="text-2xl text-[#f2ede6] tracking-wide leading-tight"
+                className="text-2xl text-[var(--text-primary)] tracking-wide leading-tight"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 Mai Neng Vang
@@ -136,22 +137,31 @@ export function Hero() {
             {STACK.map((s) => (
               <div
                 key={s.label}
-                className="flex items-center gap-3 px-4 py-2.5 rounded-lg border border-[#2e2a38] bg-[#221f2a]"
+                className="flex items-center gap-3 px-4 py-2.5 rounded-lg border border-[var(--card-border)] bg-[var(--card-bg-alt)] transition-colors duration-300"
               >
                 <span
                   className="w-2 h-2 rounded-full shrink-0"
                   style={{ background: s.color }}
                 />
-                <span className="font-mono text-sm text-[#c8bcd8]">
+                <span className="font-mono text-sm text-[var(--text-primary)]">
                   {s.label}
                 </span>
               </div>
             ))}
           </div>
 
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-emerald-800 bg-emerald-950 w-fit">
+          <div
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full w-fit transition-colors duration-300"
+            style={{
+              border: `1px solid var(--badge-border)`,
+              background: `var(--badge-bg)`,
+            }}
+          >
             <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
-            <span className="font-mono text-xs text-emerald-300">
+            <span
+              className="font-mono text-xs"
+              style={{ color: `var(--badge-text)` }}
+            >
               Open to work
             </span>
           </div>
@@ -163,7 +173,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <p className="font-mono text-xs text-[#5a4f6a] tracking-[0.15em] uppercase border-b border-[#2a2535] pb-4">
+          <p className="font-mono text-xs text-[var(--text-muted)] tracking-[0.15em] uppercase border-b border-[var(--card-border)] pb-4 transition-colors duration-300">
             // Receipts — things I&apos;ve actually shipped
           </p>
 
@@ -171,10 +181,10 @@ export function Hero() {
             {RECEIPTS.map((r) => (
               <motion.div
                 key={r.title}
-                className={`rounded-2xl p-5 border flex flex-col gap-2 ${
+                className={`rounded-2xl p-5 border flex flex-col gap-2 transition-colors duration-300 ${
                   r.accent
-                    ? "bg-[#1e1a2a] border-[#4a3f68]"
-                    : "bg-[#221f2a] border-[#2e2a38]"
+                    ? "bg-[var(--card-bg)] border-[var(--card-border)]"
+                    : "bg-[var(--card-bg-alt)] border-[var(--card-border)]"
                 }`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -184,10 +194,10 @@ export function Hero() {
                 >
                   {r.tag}
                 </span>
-                <p className="text-[#f2ede6] font-bold text-base leading-snug">
+                <p className="text-[var(--text-primary)] font-bold text-base leading-snug">
                   {r.title}
                 </p>
-                <p className="text-[#8a7a9a] text-sm leading-relaxed">
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                   {r.sub}
                 </p>
               </motion.div>
@@ -196,7 +206,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-4">
             <motion.button
-              className="flex-1 min-w-[140px] px-8 py-3 rounded-full bg-purple-200 text-[#1a1420] text-sm font-bold tracking-wide hover:bg-purple-100 transition-colors"
+              className="flex-1 min-w-[140px] px-8 py-3 rounded-full bg-[var(--accent-purple)] text-white text-sm font-bold tracking-wide hover:opacity-90 transition-all duration-300"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => scrollTo("projects")}
@@ -204,7 +214,7 @@ export function Hero() {
               View Projects →
             </motion.button>
             <motion.button
-              className="flex-1 min-w-[140px] px-8 py-3 rounded-full border border-[#3a3348] text-[#c8bcd8] text-sm hover:border-purple-300/50 hover:text-purple-200 transition-colors"
+              className="flex-1 min-w-[140px] px-8 py-3 rounded-full border border-[var(--card-border)] text-[var(--text-secondary)] text-sm hover:border-[var(--accent-purple)] hover:text-[var(--accent-purple)] transition-all duration-300"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => scrollTo("contact")}
