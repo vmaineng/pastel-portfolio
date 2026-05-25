@@ -23,7 +23,7 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  const NAV_ITEMS = ["Home", "About", "Projects", "Contact"];
+  const NAV_ITEMS = ["Home", "About", "Projects", "Testimonials", "Contact"];
 
   const hamburgerVariants: Variants = {
     closed: { rotate: 0 },
