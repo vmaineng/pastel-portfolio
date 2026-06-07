@@ -16,7 +16,7 @@ const PROJECTS = [
     deepDive: {
       title: "Personalized Conference Scheduler with AI",
       content:
-        "Why: Lots of conference attendees struggle to choose between simultaneous talks and create a schedule that fits their interests. I built an AI-powered scheduler that generates personalized agendas based on user preferences, past behavior, and real-time updates to talk availability.",
+        "Why: There was a vague description of who the sessions would best fit for so I built an AI-powered scheduler that generates personalized agendas based on user preferences, past behavior, and real-time updates.",
     },
   },
   {
@@ -32,7 +32,7 @@ const PROJECTS = [
     deepDive: {
       title: "Open Source Codebase Analyzer with AI",
       content:
-        "Why? When I contribute to new open source projects, I waste a lot of time searching through documentation and source code to understand the codebase. I built an AI-powered tool that generates interactive visualizations of unfamiliar codebases, so I can get up to speed faster and spend more time writing code.",
+        "Why? When I contribute to new open source projects, I wasted a lot of time searching through documentation and source code. I built an AI-powered tool that generated if the repo was active, junior-friendly so I can easily contribute and know the tickets are being reviewed on.",
     },
   },
   {
@@ -48,7 +48,7 @@ const PROJECTS = [
     deepDive: {
       title: "AI-Powered Mock Interview Platform",
       content:
-        "Why? Traditional mock interview platforms often fail to replicate the dynamic nature of real interviews, leaving candidates underprepared. I built an AI-powered mock interview platform that simulates real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
+        "Why? Practice makes perfect so I built an AI-powered mock interview platform that simulates real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
     },
   },
 ];

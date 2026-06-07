@@ -123,7 +123,8 @@ export function Hero() {
                 Mai Neng Vang
               </p>
               <span className="font-mono text-[11px] text-purple-300/70 tracking-wider">
-                Web Engineer · AI · Open Source
+                Software Engineer — React, TypeScript, AI — 5 merged PRs in
+                PostHog
               </span>
             </div>
           </div>
