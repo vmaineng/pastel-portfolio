@@ -8,6 +8,7 @@ import Image from "next/image";
 export interface ProjectType {
   category: string;
   title: string;
+  url: string;
   description: string;
   image: string;
   tech: string[];
@@ -58,7 +59,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           height={300}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/20 to-transparent" />
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/20 to-transparent" />
       </div>
 
       <div className="space-y-5 p-4 sm:p-6">
@@ -69,10 +71,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.category}
           </div>
           <div className="flex items-start justify-between gap-4">
-            <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-[var(--text-primary)] transition-colors duration-300">
-              {project.title}
-            </h3>
-            <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-[var(--text-muted)] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[var(--text-primary)]" />
+            <a href={project.url} target="_blank" rel="noopener noreferrer">
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-[var(--text-primary)] transition-colors duration-300">
+                {project.title}
+              </h3>
+
+              <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-[var(--text-muted)] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[var(--text-primary)]" />
+            </a>
           </div>
         </div>
 

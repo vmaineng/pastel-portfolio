@@ -6,6 +6,7 @@ const PROJECTS = [
   {
     category: "Conference Project",
     title: "PyCon 2026 Schedule",
+    url: "https://pyconpal.vercel.app/",
     description:
       "Enhanced user experience with real-time updates, interactive visualizations, and personalized recommendations.",
     image: "/pycon.png",
@@ -21,6 +22,7 @@ const PROJECTS = [
   {
     category: "PRODUCTIVITY TOOL",
     title: "Junior Repo Analyzer",
+    url: "https://junior-repo-analyzer-agent.vercel.app/",
     description:
       "Optimized time to not searching through documentation or source code to understand unfamiliar codebases.",
     image: "/junior.png",
@@ -36,6 +38,7 @@ const PROJECTS = [
   {
     category: "HR-Powered Mock Interviews",
     title: "JD-AI",
+    url: "https://jd-ai.vercel.app/",
     description:
       "Simulated real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
     image: "/jd.png",
