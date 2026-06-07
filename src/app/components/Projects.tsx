@@ -24,7 +24,7 @@ const PROJECTS = [
     title: "Junior Repo Analyzer",
     url: "https://junior-repo-analyzer-agent.vercel.app/",
     description:
-      "Optimized time to not searching through documentation or source code to understand unfamiliar codebases.",
+      "Optimized time to not searching through documentation or source code to know if repo is active, junior-friendly and tickets are being reviewed on.",
     image: "/junior.png",
     tech: ["React", "GitHub API", "Claude API"],
     tags: ["GitHub API", "WebSockets", "Drag & Drop"],
