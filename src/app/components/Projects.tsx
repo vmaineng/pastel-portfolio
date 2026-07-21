@@ -4,19 +4,19 @@ import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
   {
-    category: "Conference Project",
-    title: "PyCon 2026 Schedule",
-    url: "https://pyconpal.vercel.app/",
+    category: "Freelance Client Project",
+    title: "XY Music Media Portfolio",
+    url: "https://xwm-yaaj.vercel.app/",
     description:
       "Enhanced user experience with real-time updates, interactive visualizations, and personalized recommendations.",
-    image: "/pycon.png",
-    tech: ["Supabase", "React.js", "Next.js"],
-    tags: ["AI Chat", "Real-time Sync", "Analytics"],
+    image: "/xy.png",
+    tech: ["Next.js ", "TypeScript", "FastAPI"],
+    tags: ["Theming", "Responsive Design", "Media Integration"],
     accent: "text-emerald-400",
     deepDive: {
-      title: "Personalized Conference Scheduler with AI",
+      title: "Music Media Portfolio Site",
       content:
-        "Why: There was a vague description of who the sessions would best fit for so I built an AI-powered scheduler that generates personalized agendas based on user preferences, past behavior, and real-time updates.",
+        "Why: The client needed a portfolio that felt as polished and on-brand as their music. I built a custom light/dark theming system using CSS custom properties, a fully responsive navbar, and integrated YouTube thumbnail embeds to showcase video content dynamically across the site.",
     },
   },
   {
