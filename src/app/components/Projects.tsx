@@ -4,6 +4,22 @@ import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
   {
+    category: "AI-Powered Job Search Agent",
+    title: "Job Radar",
+    url: "https://job-radar-fawn.vercel.app/",
+    description:
+      "A daily AI agent that finds junior/entry-level SWE postings in LA and remote, scores them for relevance, digs up a company contact, and surfaces it all on a dashboard — built to act on the next morning, not just browse.",
+    image: "/job-radar.png",
+    tech: ["Next.js", "TypeScript", "FastAPI", "Supabase", "Claude API"],
+    tags: ["AI Agent", "Tool-Calling", "Job Search", "Automation"],
+    accent: "text-purple-400",
+    deepDive: {
+      title: "Job Radar: An Agentic Job Search Pipeline",
+      content:
+        "Why? Job hunting shouldn't mean scrolling the same boards every day, so I built an AI agent that does the hunting for me. Instead of a hardcoded scraper, Job Radar runs a Claude-powered tool-calling loop — search_jobs, enrich_contact, save_to_dashboard — that reasons through each posting the way I would: is this actually relevant, and who do I talk to about it? It runs once a day, scores fit, finds a real contact at the company, and lays it all out on a dashboard so I can apply the next morning instead of just browsing.",
+    },
+  },
+  {
     category: "Freelance Client Project",
     title: "XY Music Media Portfolio",
     url: "https://xwm-yaaj.vercel.app/",
@@ -33,22 +49,6 @@ const PROJECTS = [
       title: "Open Source Codebase Analyzer with AI",
       content:
         "Why? When I contribute to new open source projects, I wasted a lot of time searching through documentation and source code. I built an AI-powered tool that generated if the repo was active, junior-friendly so I can easily contribute and know the tickets are being reviewed on.",
-    },
-  },
-  {
-    category: "HR-Powered Mock Interviews",
-    title: "JD-AI",
-    url: "https://jd-ai.vercel.app/",
-    description:
-      "Simulated real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
-    image: "/jd.png",
-    tech: ["Voice-Powered", "Next.js", "React.js"],
-    tags: ["Voice", "Pub/Sub", "Live Chat"],
-    accent: "text-purple-400",
-    deepDive: {
-      title: "AI-Powered Mock Interview Platform",
-      content:
-        "Why? Practice makes perfect so I built an AI-powered mock interview platform that simulates real-world interview scenarios with AI-generated questions and feedback, helping candidates prepare more effectively for technical interviews.",
     },
   },
 ];
