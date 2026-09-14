@@ -8,7 +8,7 @@ A modern, responsive portfolio website built with **Next.js 14**, **TypeScript**
 
 [View Live Portfolio](https://pastel-portfolio-iota.vercel.app/)
 <br/>
-<img width="1679" height="848 alt="Image" src="https://github.com/user-attachments/assets/441ede80-81ca-4b67-a349-ca9386278b85" />
+<img width="1679" height="848" alt="Image" src="https://github.com/user-attachments/assets/441ede80-81ca-4b67-a349-ca9386278b85" />
 
 ## ✨ Features
 
